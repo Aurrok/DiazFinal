@@ -1,0 +1,16 @@
+{% extends 'bases/base.html' %}
+
+{% block title  %}
+    <title>Ver Banda</title>
+{% endblock title  %}
+
+{% block mi_contenido %}
+
+<p>
+    <li>nombre: {{banda.nombre}}</li>
+    <li>Cant. integrantes: {{banda.cant_integrantes}}</li>
+    <li>descripcion: {{banda.descripcion | safe }}</li>
+
+</p>
+
+{% endblock mi_contenido %}

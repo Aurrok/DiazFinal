@@ -1,0 +1,16 @@
+{% extends 'bases/base.html' %}
+
+{% block title  %}
+    <title>Nuevo usuario</title>
+{% endblock title  %}   
+
+{% block mi_contenido %}
+<form action={% url 'nuevo_usuario' %} method="post">
+    {% csrf_token %}
+    <table>
+        {{formulario}}
+    </table>
+    <button>Registrar</button>
+</form>
+{% endblock mi_contenido %}
+

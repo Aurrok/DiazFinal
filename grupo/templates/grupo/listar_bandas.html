@@ -1,0 +1,32 @@
+{% extends 'bases/base.html' %}
+
+{% block title  %}
+    <title>Bandas</title>
+{% endblock title  %}   
+
+{% block texto_header %}Lista de Bandas{% endblock texto_header %}
+
+{% block mi_contenido %}
+<p>
+<form action={% url 'listar_bandas' %} method='GET'>
+    {{form}}
+    <button>Buscar</button>
+</form>
+</p>
+{% if object_list %}
+
+    {% for banda in object_list %}
+        <li>
+            {{banda.nombre}} {{banda.cant_integrantes}}
+            <a href={% url 'editar_banda' banda.id%}>Editar</a>
+            <a href={% url 'eliminar_banda' banda.id%}>Eliminar</a>
+            <a href={% url 'ver_banda' banda.id%}>Ver</a>
+        </li>
+    {% endfor %}
+{% else %}
+        <p>
+            No hay bandas registradas
+        </p>
+
+{% endif %}
+{% endblock mi_contenido %}

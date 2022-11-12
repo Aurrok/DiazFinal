@@ -1,0 +1,16 @@
+{% extends 'bases/base.html' %}
+
+{% block title  %}
+    <title>Editar perfil</title>
+{% endblock title  %}   
+
+
+{% block mi_contenido %}
+<form action='' method="POST" enctype='multipart/form-data'>
+    {% csrf_token %}
+    <table>
+        {{formulario}}
+    </table>
+    <button>Editar</button>
+</form>
+{% endblock mi_contenido %}

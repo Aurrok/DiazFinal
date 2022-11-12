@@ -1,0 +1,18 @@
+{% extends 'bases/base.html' %}
+
+{% block title  %}
+    <title>Registrar Banda</title>
+{% endblock title  %}   
+
+{% block texto_header %}Registrar Banda{% endblock texto_header %}
+
+{% block mi_contenido %}
+<form action={% url 'registrar'%} method="post">
+    {% csrf_token %}
+    <table> 
+        {{form.media}}
+        {{form}}
+    </table>
+    <button>Registrar</button>
+</form>
+{% endblock mi_contenido %}

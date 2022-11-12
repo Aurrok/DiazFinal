@@ -1,0 +1,17 @@
+{% extends 'bases/base.html' %}
+
+{% block title  %}
+    <title>Eliminar Banda</title>
+{% endblock title  %}   
+
+{% block texto_header %}Eliminar Banda{% endblock texto_header %}
+
+{% block mi_contenido %}
+<form action={% url 'eliminar_banda' banda.id %} method="post">
+    {% csrf_token %}
+    <p>
+        Desea eliminar la banda {{banda.nombre}}?
+    </p>
+    <button>Confirmar</button>
+</form>
+{% endblock mi_contenido %}

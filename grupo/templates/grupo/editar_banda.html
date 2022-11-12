@@ -1,0 +1,18 @@
+{% extends 'bases/base.html' %}
+
+{% block title  %}
+    <title>Editar Banda</title>
+{% endblock title  %}   
+
+{% block texto_header %}Editar Banda{% endblock texto_header %}
+
+{% block mi_contenido %}
+<form action={% url 'editar_banda' banda.id %} method="post">
+    {% csrf_token %}
+    <table>
+        {{form.media}}
+        {{form}}
+    </table>
+    <button>Editar</button>
+</form>
+{% endblock mi_contenido %}

@@ -1,0 +1,18 @@
+{% extends 'bases/base.html' %}
+
+{% block title  %}
+    <title>Iniciar sesion</title>
+{% endblock title  %}   
+
+{% block texto_header %}Iniciar sesion{% endblock texto_header %}
+
+{% block mi_contenido %}
+<form action={% url 'ingresar'%} method="post">
+    {% csrf_token %}
+    <table>
+        {{formulario}}
+    </table>
+    <button>Ingresar</button>
+</form>
+{% endblock mi_contenido %}
+
